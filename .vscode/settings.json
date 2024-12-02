@@ -1,0 +1,6 @@
+{
+    "ipynb.pasteImagesAsAttachments.enabled": true,
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.hideOnStartup": "always"
+}

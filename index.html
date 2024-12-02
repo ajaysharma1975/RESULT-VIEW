@@ -1,0 +1,524 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIET it</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body {
+        margin: 0;
+
+        /* background-color: rgb(128, 123, 123);*/
+        /* background-color: #649168; */
+        background-color: #d9d7cb;
+      }
+      .userImage {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 40px;
+        float: left;
+        margin-right: 18px;
+        user-select: none;
+      }
+
+      .username {        padding-top: 5px;
+        padding: auto;
+        font-size: medium;
+        user-select: none;
+      }
+      .rollno {
+        font-size: small;
+        user-select: none;
+      }
+      ._heading {
+        width: 100%;
+        font-style: bold;
+        text-align: center;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        user-select: none;
+      }
+      .header {
+        /* background-color: rgb(199, 195, 195);   */
+        background-color: #a6a498;
+        text-shadow: 0.8px 0.8px #7b8995;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      ._footer {
+        clear: both;
+
+        height: 50px;
+        /* margin-top: -200px; */
+        background-color: #2b2a25;
+        margin-top: 10px;
+        padding: 20px;
+        padding-bottom: 30px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+      }
+      ._author {
+        color: #d9a78c;
+        font-size: 80%;
+        text-align: center;
+        text-decoration: underline;
+        text-shadow: 0.5px 0.5px #685b5b;
+        user-select: none;
+      }
+
+      .student {
+        /* background-color: rgb(121, 85, 85);*/
+        /* background-color: #207F5F; */
+        background-color: #51443b;
+
+        height: 95px;
+
+        border-radius: 10px;
+        padding: 10px;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      /* .student :hover {
+            /*background-color: rgb(178, 117, 117);*/
+      /* background-color: #AF2620; *
+            background-color: #BFBC8F;
+        } */
+      .student:active {
+        /*     background-color: rgb(173, 86, 86);  #D3AC6B  #BFBC8F*/
+        background-color: #483d35;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 class="_heading">MIET</h1>
+      <h2 class="_heading">IT STUDENTS</h2>
+    </div>
+    <div class="unheader">
+      <div style="height: 78px; width: 100%"></div>
+      <div
+        style="
+          background-color: #7b8995;
+          /* border: 2px solid black; */
+          width: 110px;
+          margin: auto;
+          border-radius: 5px;
+          box-shadow: 2px 2px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <a href="#_graph" class="seer">see RANKING</a>
+      </div>
+    </div>
+    <div id="body"></div>
+
+    <div class="graph" id="_graph">
+      <img src="semester2 scores.png" class="graphImg" alt="" />
+    </div>
+
+    <div class="_footer">
+      <h6 class="_author">BY AJAY SHARMA (IT)</h6>
+    </div>
+    <script>
+      const dataDiv = document.getElementById("body");
+      const children = [
+        {
+          rollNo: 2300680130001,
+          name: "AADARSH KUMAR SHARMA",
+          sem1: 4.45,
+          sem2: 4.73,
+        },
+        {
+          rollNo: 2300680130003,
+          name: "ADITI GARG",
+          sem1: 8.86,
+          sem2: 8.27,
+        },
+        {
+          rollNo: 2300680130004,
+          name: "AJAY SHARMA",
+          sem1: 7.18,
+          sem2: 5.68,
+        },
+        {
+          rollNo: 2300680130005,
+          name: "AJIM",
+          sem1: 5.91,
+          sem2: 5.82,
+        },
+        {
+          rollNo: 2300680130006,
+          name: "ALIS SURYAN",
+          sem1: 8.36,
+          sem2: 8.73,
+        },
+        {
+          rollNo: 2300680130007,
+          name: "ANANTIKA KAUSHIK",
+          sem1: 6.36,
+          sem2: 5.64,
+        },
+        {
+          rollNo: 2300680130008,
+          name: "ANKIT KUMAR",
+          sem1: 7.45,
+          sem2: 7.86,
+        },
+        {
+          rollNo: 2300680130009,
+          name: "ANUSHKA SINGH",
+          sem1: 5.23,
+          sem2: 3.64,
+        },
+        {
+          rollNo: 2300680130010,
+          name: "ARYAN TYAGI",
+          sem1: 6.68,
+          sem2: 7.14,
+        },
+        {
+          rollNo: 2300680130011,
+          name: "AVIRAL RAGHAV",
+          sem1: 9.27,
+          sem2: 9,
+        },
+        {
+          rollNo: 2300680130012,
+          name: "BHAWNA SAINI",
+          sem1: 6.27,
+          sem2: 6.18,
+        },
+        {
+          rollNo: 2300680130013,
+          name: "CHANCHAL",
+          sem1: 8.77,
+          sem2: 8.95,
+        },
+        {
+          rollNo: 2300680130014,
+          name: "HARDIK SACHDEVA",
+          sem1: 6.73,
+          sem2: 6.14,
+        },
+        {
+          rollNo: 2300680130015,
+          name: "HARSHIT",
+          sem1: 7.45,
+          sem2: 5.91,
+        },
+        {
+          rollNo: 2300680130016,
+          name: "HIMANSHU",
+          sem1: 7.32,
+          sem2: 6.5,
+        },
+        {
+          rollNo: 2300680130017,
+          name: "IRTIQA REHMAN ANSARI",
+          sem1: 7.23,
+          sem2: 8,
+        },
+        {
+          rollNo: 2300680130018,
+          name: "ISHA MALIK",
+          sem1: 6.64,
+          sem2: 7.73,
+        },
+        {
+          rollNo: 2300680130019,
+          name: "ITI",
+          sem1: 6.45,
+          sem2: 4.82,
+        },
+        {
+          rollNo: 2300680130020,
+          name: "JANSHI KAUSHIK",
+          sem1: 6.68,
+          sem2: 7.64,
+        },
+        {
+          rollNo: 2300680130021,
+          name: "KANIKA",
+          sem1: 8.18,
+          sem2: 8.68,
+        },
+        {
+          rollNo: 2300680130022,
+          name: "KM SAKSHI",
+          sem1: 7.41,
+          sem2: 6.27,
+        },
+        {
+          rollNo: 2300680130023,
+          name: "KRISH VERMA ",
+          sem1: 6.82,
+          sem2: 7.5,
+        },
+        {
+          rollNo: 2300680130024,
+          name: "LOVEY",
+          sem1: 7.45,
+          sem2: 5.73,
+        },
+        {
+          rollNo: 2300680130025,
+          name: "MAHI BANSHAL",
+          sem1: 5.77,
+          sem2: 5.91,
+        },
+        {
+          rollNo: 2300680130026,
+          name: "MANASVI GARG",
+          sem1: 7.36,
+          sem2: 7.14,
+        },
+        {
+          rollNo: 2300680130027,
+          name: "MANU CHAUHAN",
+          sem1: 8.05,
+          sem2: 8.09,
+        },
+        {
+          rollNo: 2300680130028,
+          name: "MAYANK CHOUDHARY",
+          sem1: 8.41,
+          sem2: 8.27,
+        },
+        {
+          rollNo: 2300680130029,
+          name: "MAYANK CHAUHAN",
+          sem1: 6.91,
+          sem2: 7.5,
+        },
+        {
+          rollNo: 2300680130030,
+          name: "MAYANK JAIN",
+          sem1: 8.23,
+          sem2: 9.09,
+        },
+        {
+          rollNo: 2300680130031,
+          name: "MOHD DANISH",
+          sem1: 7.68,
+          sem2: 8,
+        },
+        {
+          rollNo: 2300680130032,
+          name: "MOHD SAMEER",
+          sem1: 3.14,
+          sem2: 2.5,
+        },
+        {
+          rollNo: 2300680130033,
+          name: "MOHD FAIZ",
+          sem1: 2.14,
+          sem2: 1.82,
+        },
+        {
+          rollNo: 2300680130034,
+          name: "NAMAMI TYAGI",
+          sem1: 6.82,
+          sem2: 7.32,
+        },
+        {
+          rollNo: 2300680130035,
+          name: "NAVYA TYAGI",
+          sem1: 4.14,
+          sem2: 3.64,
+        },
+        {
+          rollNo: 2300680130036,
+          name: "NIKHIL TEOTIA",
+          sem1: 4.55,
+          sem2: 5.36,
+        },
+        {
+          rollNo: 2300680130037,
+          name: "PRAGYA KARWAL",
+          sem1: 8.27,
+          sem2: 8.36,
+        },
+        {
+          rollNo: 2300680130038,
+          name: "PRANJAL RASTOGI",
+          sem1: 6.73,
+          sem2: 7.09,
+        },
+        {
+          rollNo: 2300680130039,
+          name: "RAJAT CHOUDHARY",
+          sem1: 5.86,
+          sem2: 6.82,
+        },
+        {
+          rollNo: 2300680130040,
+          name: "RASHESWAR SHARMA",
+          sem1: 6.32,
+          sem2: 5.64,
+        },
+        {
+          rollNo: 2300680130041,
+          name: "RICHA CHOUDHARY",
+          sem1: 4.86,
+          sem2: 3.55,
+        },
+        {
+          rollNo: 2300680130042,
+          name: "RITIKA AHLAWAT",
+          sem1: 6.91,
+          sem2: 7.09,
+        },
+        {
+          rollNo: 2300680130043,
+          name: "RUNJHUN GUPTA",
+          sem1: 6.91,
+          sem2: 6.68,
+        },
+        {
+          rollNo: 2300680130044,
+          name: "SHIVAM KUMAR",
+          sem1: 6.55,
+          sem2: 5.18,
+        },
+        {
+          rollNo: 2300680130045,
+          name: "SHIVAMI NAUTIYAL",
+          sem1: 7.32,
+          sem2: 7.09,
+        },
+        {
+          rollNo: 2300680130046,
+          name: "SHIVRAJ KASHYAP",
+          sem1: 6.23,
+          sem2: 3.95,
+        },
+        {
+         rollNo: 2300680130047,
+         name: "SIDDHANT SAHARAWAT",
+         sem1: 6.5,
+         sem2:  4.73,
+        },
+        {
+          rollNo: 2300680130048,
+          name: "SNEHA PAL",
+          sem1: 6.36,
+          sem2: 5.68,
+        },
+        {
+          rollNo: 2300680130049,
+          name: "TANISHQ SHARMA",
+          sem1: 6.5,
+          sem2: 5.95,
+        },
+        {
+          rollNo: 2300680130050,
+          name: "TAPAN MISHRA",
+          sem1: 6.91,
+          sem2: 6.82,
+        },
+        {
+          rollNo: 2300680130051,
+          name: "TAPAS SINGH",
+          sem1: 6.05,
+          sem2: 5.86,
+        },
+        {
+          rollNo: 2300680130052,
+          name: "UJJWAL BHARGAVA",
+          sem1: 8.86,
+          sem2: 8.55,
+        },
+        {
+          rollNo: 2300680130053,
+          name: "UTTAM",
+          sem1: 6.77,
+          sem2: 5.73,
+        },
+        {
+          rollNo: 2300680130054,
+          name: "VANSH PAL",
+          sem1: 8.59,
+          sem2: 7.5,
+        },
+        {
+          rollNo: 2300680130055,
+          name: "VANSH SHARMA",
+          sem1: 7.5,
+          sem2: 7.05,
+        },
+        {
+          rollNo: 2300680130056,
+          name: "VANSHIKA TIWARI",
+          sem1: 7.27,
+          sem2: 7.45,
+        },
+        {
+          rollNo: 2300680130057,
+          name: "VASU",
+          sem1: 7.77,
+          sem2: 7.55,
+        },
+        {
+          rollNo: 2300680130058,
+          name: "YATHARTH MITTAL",
+          sem1: 6.68,
+          sem2: 7.05,
+        },
+      ];
+      let i = 1;
+
+      for (const child of children) {
+        const accId = `section${i}`;
+        i++;
+        dataDiv.innerHTML += ` <div class="accordian">
+          
+      <div>
+        <input
+          type="checkbox"
+          name="example_accordian"
+          id=${accId}
+          class="accordian__input"
+        />
+        <label for=${accId} class="accordian__lable">
+          <div class="student">
+            <img src="cat.jpg" class="userImage" alt=""/>
+            <h2 class="username">${child.name}</h2>
+            <p class="rollno">${child.rollNo}</p>
+          </div></label
+        >
+        <div class="accordian__content">
+          <div class="sgpatable">
+            <table>
+              <tr>
+                <th>semester</th>
+                <th>SGPA</th>
+              </tr>
+           <tr>
+                <td>${1}</td>
+                <td>${child.sem1}</td>
+              </tr><tr>
+                <td>${2}</td>
+                <td>${child.sem2}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>`;
+      }
+    </script>
+  </body>
+</html>  
+
